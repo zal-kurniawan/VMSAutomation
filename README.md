@@ -52,10 +52,8 @@ Follow the steps below to execute the automation scripts.
 ### 1. Clone the Repository
 Use the following command to download the project locally. Ensure you have configured your SSH key with GitHub.
 ```
-
 git clone git@github.com:zal-kurniawan/VMSAutomation.git
 cd VMSAutomation
-
 ```
 
 ### 2. Update Test Data (Optional)
@@ -68,7 +66,5 @@ If needed, you can update the main test data (e.g., vendor name, documents, etc.
 Open a terminal in the project's root directory and run the command below. Maven will automatically download all required dependencies and execute the tests.
 
 ```
-
 mvn clean test
-
 ```
