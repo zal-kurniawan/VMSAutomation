@@ -1,7 +1,6 @@
 # ⚙️ VMSAutomation: Vendor Management System Automation Project
 
-This project contains a set of automated testing scripts for the **Vendor Management System (VMS)** web application.  
-The main goal is to validate core functionalities, especially the **New Vendor Registration workflow**.
+This project contains a set of automated testing scripts for the **Vendor Management System (VMS)** web application. The main goal is to validate core functionalities, especially the **New Vendor Registration workflow**.
 
 The project is built using **Java** with the **Selenium WebDriver** framework and follows the **Page Object Model (POM)** design pattern to ensure clean, structured, and maintainable code.
 
