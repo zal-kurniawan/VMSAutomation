@@ -62,7 +62,7 @@ If needed, you can update the main test data (e.g., vendor name, documents, etc.
 
 `src/test/java/com/vms/tests/CreateVendor.java`
 
-3. Run Tests via Maven
+### 3. Run Tests via Maven
 Open a terminal in the project's root directory and run the command below. Maven will automatically download all required dependencies and execute the tests.
 
 ```
