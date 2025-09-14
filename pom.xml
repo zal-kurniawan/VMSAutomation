@@ -9,18 +9,8 @@
     <url>http://maven.apache.org</url>
 
     <!-- Dependencies -->
-            <properties>
-                <allure.version>2.24.0</allure.version>
-            </properties>
     <dependencies>
-        <!-- JUnit Legacy -->
-        <!-- <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
-        </dependency> -->
-        
+
         <!-- Selenium Java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -50,13 +40,6 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-junit5</artifactId>
-            <version>${allure.version}</version>
-            <scope>test</scope>
-        </dependency> -->
-
     </dependencies>
 
     <!-- Build Configuration -->
@@ -79,6 +62,5 @@
             </plugin>
         </plugins>
     </build>
-
 
 </project>

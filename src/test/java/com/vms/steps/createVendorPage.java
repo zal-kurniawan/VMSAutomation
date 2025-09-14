@@ -6,6 +6,7 @@ import com.vms.common.BasePage;
 import com.vms.objects.createVendorObject;
 
 public class createVendorPage extends BasePage {
+
     private createVendorObject createVendorObject;
     public boolean isTrade, isNonTrade;
 

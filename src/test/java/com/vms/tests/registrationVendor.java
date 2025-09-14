@@ -1,24 +1,26 @@
 package com.vms.tests;
 
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import com.vms.common.BaseTest;
 import com.vms.steps.createVendorPage;
 import com.vms.steps.loginPage;
 import com.vms.steps.vendorRegistrationPage;
 
-public class createVendor extends BaseTest {
+public class registrationVendor extends BaseTest {
 
-        private loginPage login;
-        private vendorRegistrationPage vendorRegistrationPage;
-        private createVendorPage createVendorPage;
+        private static loginPage login;
+        private static vendorRegistrationPage vendorRegistrationPage;
+        private static createVendorPage createVendorPage;
 
-        @org.junit.jupiter.api.BeforeEach
-        public void init() {
+        @BeforeAll
+        public static void init() {
                 login = new loginPage(driver);
                 vendorRegistrationPage = new vendorRegistrationPage(driver);
                 createVendorPage = new createVendorPage(driver);
         }
 
-        @org.junit.jupiter.api.Test
+        @Test
         public void vendorRegistrationByVMStaff() throws InterruptedException {
                 // Login vm staff
                 login.loginVMS("fahmi.budiman", "123");

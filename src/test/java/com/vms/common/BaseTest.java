@@ -1,7 +1,7 @@
 package com.vms.common;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -10,11 +10,11 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
 
-    protected WebDriver driver;
-    protected boolean individualRun;
+    protected static WebDriver driver;
+    protected static boolean individualRun;
 
-    @BeforeEach
-    public void setup() {
+    @BeforeAll
+    public static void setup() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.setAcceptInsecureCerts(true); // Mengabaikan sertifikat tidak aman
@@ -37,9 +37,10 @@ public class BaseTest {
         }
     }
 
-    @AfterEach
-    public void teardown() {
+    @AfterAll
+    public static void teardown() {
         if (driver != null) {
+            System.out.println("Test selesai. Menutup browser...");
             driver.quit(); // Menutup browser setelah setiap test
         }
     }
