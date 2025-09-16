@@ -1,3 +1,4 @@
+com/vms/tests/registrationVendor.class
 com/vms/tests/editVendor.class
 com/vms/objects/loginObject.class
 com/vms/common/BaseTest.class

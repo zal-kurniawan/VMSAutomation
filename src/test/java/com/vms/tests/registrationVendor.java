@@ -1,7 +1,7 @@
 package com.vms.tests;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
 import com.vms.common.BaseTest;
 import com.vms.steps.createVendorPage;
 import com.vms.steps.loginPage;
@@ -13,7 +13,7 @@ public class registrationVendor extends BaseTest {
         private static vendorRegistrationPage vendorRegistrationPage;
         private static createVendorPage createVendorPage;
 
-        @BeforeAll
+        @BeforeClass
         public static void init() {
                 login = new loginPage(driver);
                 vendorRegistrationPage = new vendorRegistrationPage(driver);

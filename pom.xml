@@ -10,7 +10,6 @@
 
     <!-- Dependencies -->
     <dependencies>
-
         <!-- Selenium Java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -25,21 +24,13 @@
             <version>5.5.3</version>
         </dependency>
 
-        <!-- JUnit 5 for testing -->
+        <!-- TestNG for testing framework -->
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.10.0</version>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.11.0</version>
             <scope>test</scope>
         </dependency>
-
-        <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-engine</artifactId>
-            <version>1.10.0</version>
-            <scope>test</scope>
-        </dependency>
-
     </dependencies>
 
     <!-- Build Configuration -->

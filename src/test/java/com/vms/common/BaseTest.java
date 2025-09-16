@@ -1,10 +1,10 @@
 package com.vms.common;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -13,7 +13,7 @@ public class BaseTest {
     protected static WebDriver driver;
     protected static boolean individualRun;
 
-    @BeforeAll
+    @BeforeClass
     public static void setup() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
@@ -37,7 +37,7 @@ public class BaseTest {
         }
     }
 
-    @AfterAll
+    @AfterClass
     public static void teardown() {
         if (driver != null) {
             System.out.println("Test selesai. Menutup browser...");

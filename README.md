@@ -27,7 +27,7 @@ This project is powered by modern technologies and libraries for web automation 
 | ----------------- | ------------------ | --------------------------------------- |
 | Language          | Java               | Main programming language.              |
 | Core Framework    | Selenium WebDriver | Automates browser interactions.         |
-| Test Framework    | JUnit 5 (Jupiter)  | Runs and manages test lifecycle.        |
+| Test Framework    | TestNG             | Runs and manages test lifecycle.        |
 | Driver Management | WebDriverManager   | Automatically manages ChromeDriver.     |
 | Build Tool        | Maven              | Manages dependencies and build process. |
 

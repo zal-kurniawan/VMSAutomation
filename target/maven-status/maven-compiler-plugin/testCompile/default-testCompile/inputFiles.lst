@@ -1,12 +1,12 @@
 /Users/rizalkurniawan/Documents/Automation/VMSAutomation/src/test/java/com/vms/objects/createVendorObject.java
 /Users/rizalkurniawan/Documents/Automation/VMSAutomation/src/test/java/com/vms/steps/vendorDatabasePage.java
 /Users/rizalkurniawan/Documents/Automation/VMSAutomation/src/test/java/com/vms/objects/navigationObject.java
+/Users/rizalkurniawan/Documents/Automation/VMSAutomation/src/test/java/com/vms/tests/registrationVendor.java
 /Users/rizalkurniawan/Documents/Automation/VMSAutomation/src/test/java/com/vms/steps/createVendorPage.java
 /Users/rizalkurniawan/Documents/Automation/VMSAutomation/src/test/java/com/vms/common/BasePage.java
 /Users/rizalkurniawan/Documents/Automation/VMSAutomation/src/test/java/com/vms/common/BaseTest.java
 /Users/rizalkurniawan/Documents/Automation/VMSAutomation/src/test/java/com/vms/steps/loginPage.java
 /Users/rizalkurniawan/Documents/Automation/VMSAutomation/src/test/java/com/vms/objects/loginObject.java
-/Users/rizalkurniawan/Documents/Automation/VMSAutomation/src/test/java/com/vms/tests/createVendor.java
 /Users/rizalkurniawan/Documents/Automation/VMSAutomation/src/test/java/com/vms/objects/vendorDatabaseObject.java
 /Users/rizalkurniawan/Documents/Automation/VMSAutomation/src/test/java/com/vms/steps/vendorRegistrationPage.java
 /Users/rizalkurniawan/Documents/Automation/VMSAutomation/src/test/java/com/vms/tests/editVendor.java

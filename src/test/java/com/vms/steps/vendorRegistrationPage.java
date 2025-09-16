@@ -1,9 +1,7 @@
 package com.vms.steps;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.openqa.selenium.WebDriver;
-
+import org.testng.Assert;
 import com.vms.common.BasePage;
 import com.vms.objects.navigationObject;
 import com.vms.objects.vendorRegistrationObject;
@@ -21,11 +19,11 @@ public class vendorRegistrationPage extends BasePage {
     }
 
     public void openVendorRegistrationPage() throws InterruptedException {
-        navigationObject.navigationVendorRegistration().click();
+        navigationObject.linkVendorRegistration().click();
         Thread.sleep(1000);
         String currentUrl = driver.getCurrentUrl();
         String expectedUrl = "https://tam-vms.southeastasia.cloudapp.azure.com/vms/VendorRegistration/VendorRegistration";
-        assertEquals(expectedUrl, currentUrl, "URL does not match!");
+        Assert.assertEquals(currentUrl, expectedUrl, "Gagal membuka halaman Vendor Registration");
     }
 
     public void openCreateVendorPage() {

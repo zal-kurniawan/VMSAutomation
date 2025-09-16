@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class vendorRegistrationObject {
-     private WebDriver driver;
+    private WebDriver driver;
 
     // Konstruktor menerima WebDriver
     public vendorRegistrationObject(WebDriver driver) {
@@ -16,7 +16,7 @@ public class vendorRegistrationObject {
         return driver.findElement(By.xpath("//*//i[contains(@class, 'fa-plus')]/.."));
     }
 
-    public WebElement buttonViewDynamic(String text){
+    public WebElement buttonViewVendorDynamic(String text) {
         return driver.findElement(By.xpath("//*//td[text() = '" + text + "']//following-sibling::td//button"));
     }
 }
