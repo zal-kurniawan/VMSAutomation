@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: com.vms.common.BaseTest
+Test set: com.vms.tests.registrationVendor
 -------------------------------------------------------------------------------
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.754 s -- in com.vms.common.BaseTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 57.02 s -- in com.vms.tests.registrationVendor

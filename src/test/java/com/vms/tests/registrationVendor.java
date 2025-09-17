@@ -20,7 +20,7 @@ public class registrationVendor extends BaseTest {
                 createVendorPage = new createVendorPage(driver);
         }
 
-        @Test
+        @Test(priority = 1)
         public void vendorRegistrationByVMStaff() throws InterruptedException {
                 // Login vm staff
                 login.loginVMS("fahmi.budiman", "123");
@@ -34,11 +34,11 @@ public class registrationVendor extends BaseTest {
                 String[] businessArea = { "POINTs", "TCO" };
                 String type = "company";
                 String entity = "CV";
-                String vendorName = "TESTVMS004";
-                String tradingName = "TESTVMS004";
+                String vendorName = "TestVMSBugs004";
+                String tradingName = "TestVMSBugs004";
                 String[][] contact = {
-                                { "TATATA", "Finance", "62845049183", "jaja@gmail.com", "394850" },
-                                { "TUTUTU", "Sales", "6280130139", "jojo@gmail.com", "671923" }
+                                { "DAOSJ", "Finance", "62845049183", "jaja@gmail.com", "405592" },
+                                { "TKPWE", "Sales", "6280130139", "jojo@gmail.com", "305958" }
                 };
                 String scopeOfWork = "Testing";
                 String detailScopeOfWork = "TestingTesting";

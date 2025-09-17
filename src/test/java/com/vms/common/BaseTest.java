@@ -4,7 +4,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -13,8 +15,8 @@ public class BaseTest {
     protected static WebDriver driver;
     protected static boolean individualRun;
 
-    @BeforeClass
-    public static void setup() {
+    @BeforeSuite(alwaysRun = true)
+    public static void setupSuite() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.setAcceptInsecureCerts(true); // Mengabaikan sertifikat tidak aman
@@ -37,8 +39,8 @@ public class BaseTest {
         }
     }
 
-    @AfterClass
-    public static void teardown() {
+    @AfterSuite(alwaysRun = true)
+    public static void teardownSuite() {
         if (driver != null) {
             System.out.println("Test selesai. Menutup browser...");
             driver.quit(); // Menutup browser setelah setiap test
