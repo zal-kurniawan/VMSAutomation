@@ -100,6 +100,14 @@ public class createVendorObject {
         return driver.findElement(By.xpath("//*//tr[" + count + "]//textarea[contains(@class, 'contact-nik')]"));
     }
 
+    public WebElement inputCompanyPhone1() {
+        return driver.findElement(By.xpath("//*//input[@id = 'company-phone-1']"));
+    }
+
+    public WebElement inputCompanyPhone2() {
+        return driver.findElement(By.xpath("//*//input[@id = 'company-phone-2']"));
+    }
+
     public WebElement inputScopeOfWork() {
         return driver.findElement(By.xpath("//*//textarea[@id = 'scope-of-work']"));
     }
@@ -128,13 +136,13 @@ public class createVendorObject {
         return driver.findElement(By.xpath("//*//button[@id = 'addBusinessButton']"));
     }
 
-    public WebElement radioButtonBusinessClasificationDynamic(String text) {
+    public WebElement checkboxBusinessClasificationDynamic(String text) {
         return driver.findElement(By.xpath(
                 "//*//div[@id = 'inputBusinessModal']//div[contains(@class, 'modal-body')]/div[1]//label[contains(., '"
                         + text + "')]/input"));
     }
 
-    public WebElement radioButtonBusinessCategoryDynamic(String text) {
+    public WebElement checkboxBusinessCategoryDynamic(String text) {
         return driver.findElement(By.xpath(
                 "//*//div[@id = 'inputBusinessModal']//div[contains(@class, 'modal-body')]/div[2]//label[contains(., '"
                         + text + "')]/input"));

@@ -7,7 +7,6 @@ import com.vms.objects.navigationObject;
 import com.vms.objects.vendorDatabaseObject;
 
 public class vendorDatabasePage extends BasePage {
-
     private vendorDatabaseObject vendorDatabaseObject;
     private navigationObject navigationObject;
 
@@ -19,6 +18,7 @@ public class vendorDatabasePage extends BasePage {
 
     public void openVendorDatabasePage() throws InterruptedException {
         navigationObject.dropdownVendorDatabase().click();
+        sleep(500);
         navigationObject.linkVendorDatabase().click();
         sleep(1000);
         String currentUrl = driver.getCurrentUrl();
@@ -35,6 +35,11 @@ public class vendorDatabasePage extends BasePage {
         sleep(500);
         vendorDatabaseObject.inputFilterVendorName().sendKeys(vendorName);
         vendorDatabaseObject.inputFilterVendorName().sendKeys(Keys.ENTER);
+        sleep(1000);
+    }
+
+    public void openVendorDetail(String vendorName) throws InterruptedException {
+        vendorDatabaseObject.buttonViewVendorDynamic(vendorName).click();
         sleep(1000);
     }
 

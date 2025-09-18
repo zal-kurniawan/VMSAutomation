@@ -6,7 +6,6 @@ import com.vms.common.BasePage;
 import com.vms.objects.loginObject;
 
 public class loginPage extends BasePage {
-
     private loginObject loginObject;
 
     public loginPage(WebDriver driver) {

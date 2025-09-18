@@ -19,8 +19,9 @@ public class vendorDatabaseObject {
         return driver.findElement(By.xpath("//*//input[@aria-label = 'Vendor Name']"));
     }
 
-    // public WebElement buttonViewVendorDynamic() {
-    // return driver.findElement(By.xpath("//*//td[text() = 'PT. MAJU
-    // MUNDUR']//following-sibling::td//button"));
-    // }
+    public WebElement buttonViewVendorDynamic(String text) {
+        return driver.findElement(By
+                .xpath("//*//td[contains(text(), '" + text + "')]/following-sibling::td//a[@title = 'View Details']"));
+    }
+
 }

@@ -6,7 +6,6 @@ import com.vms.common.BasePage;
 import com.vms.objects.createVendorObject;
 
 public class createVendorPage extends BasePage {
-
     private createVendorObject createVendorObject;
     public boolean isTrade, isNonTrade;
 
@@ -130,11 +129,11 @@ public class createVendorPage extends BasePage {
             sleep(1000);
             for (int countBusinessClassification = 0; countBusinessClassification < businessCategory.length; countBusinessClassification++) {
                 createVendorObject
-                        .radioButtonBusinessClasificationDynamic(businessCategory[countBusinessClassification][0])
+                        .checkboxBusinessClasificationDynamic(businessCategory[countBusinessClassification][0])
                         .click();
                 sleep(1000);
                 for (int countBusinessCategory = 1; countBusinessCategory < businessCategory[countBusinessClassification].length; countBusinessCategory++) {
-                    createVendorObject.radioButtonBusinessCategoryDynamic(
+                    createVendorObject.checkboxBusinessCategoryDynamic(
                             businessCategory[countBusinessClassification][countBusinessCategory]).click();
                 }
             }

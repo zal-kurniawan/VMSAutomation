@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: com.vms.tests.registrationVendor
+Test set: com.vms.tests.editVendor
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 54.03 s -- in com.vms.tests.registrationVendor
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 29.98 s -- in com.vms.tests.editVendor

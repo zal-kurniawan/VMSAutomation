@@ -7,7 +7,6 @@ import com.vms.objects.navigationObject;
 import com.vms.objects.vendorRegistrationObject;
 
 public class vendorRegistrationPage extends BasePage {
-
     private vendorRegistrationObject vendorRegistrationObject;
     private navigationObject navigationObject;
 

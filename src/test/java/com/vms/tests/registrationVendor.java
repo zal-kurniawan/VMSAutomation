@@ -34,11 +34,11 @@ public class registrationVendor extends BaseTest {
                 String[] businessArea = { "POINTs", "TCO" };
                 String type = "company";
                 String entity = "CV";
-                String vendorName = "TestVMSBugs004";
-                String tradingName = "TestVMSBugs004";
+                String vendorName = "TestVMSBugs005";
+                String tradingName = "TestVMSBugs005";
                 String[][] contact = {
-                                { "DAOSJ", "Finance", "62845049183", "jaja@gmail.com", "405592" },
-                                { "TKPWE", "Sales", "6280130139", "jojo@gmail.com", "305958" }
+                                { "AOIWEP", "Finance", "62845049183", "jaja@gmail.com", "405592" },
+                                { "LFKEWE", "Sales", "6280130139", "jojo@gmail.com", "305958" }
                 };
                 String scopeOfWork = "Testing";
                 String detailScopeOfWork = "TestingTesting";
@@ -47,7 +47,7 @@ public class registrationVendor extends BaseTest {
                 String[][] businessCategory = {
                                 { "After Sales Parts Business", "Chemical", "Oil" },
                                 { "Digital Marketing", "Digital Marketing" },
-                                { "IT matters", "Software / License", "Link" }
+                                { "hotel", "hotel" }
                 };
                 createVendorPage.fillGeneralInformation(vendorCategory, businessArea, type, entity,
                                 vendorName,
