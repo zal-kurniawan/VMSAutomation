@@ -64,7 +64,7 @@ cd VMSAutomation
 
 If needed, you can update the main test data (e.g., vendor name, documents, etc.) in:
 
-`src/test/java/com/vms/tests/CreateVendor.java`
+`src/test/java/com/vms/tests/registrationVendor.java`
 
 ### 3. Run Tests via Maven
 
@@ -72,4 +72,8 @@ Open a terminal in the project's root directory and run the command below. Maven
 
 ```
 mvn clean test
+```
+or
+```
+mvn test -Dtest=YourTestClassName
 ```
