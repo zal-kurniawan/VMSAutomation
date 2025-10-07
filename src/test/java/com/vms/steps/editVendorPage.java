@@ -42,8 +42,10 @@ public class editVendorPage extends BasePage {
             sleep(500);
         }
         // Update Trading Name
-        editVendorObject.inputTradingName().clear();
-        editVendorObject.inputTradingName().sendKeys(tradingName);
+        if (editVendorObject.inputTradingName().getText() != tradingName) {
+            editVendorObject.inputTradingName().clear();
+            editVendorObject.inputTradingName().sendKeys(tradingName);
+        }
 
         // Update Contact Person
         int totalContactPerson = editVendorObject.tablerowContactPerson().size();
@@ -62,16 +64,22 @@ public class editVendorPage extends BasePage {
             totalContactPerson++;
         }
         // Update Company Phone 1
-        editVendorObject.inputCompanyPhone1().clear();
-        editVendorObject.inputCompanyPhone1().sendKeys(companyPhone1);
+        if (editVendorObject.inputCompanyPhone1().getText() != companyPhone1) {
+            editVendorObject.inputCompanyPhone1().clear();
+            editVendorObject.inputCompanyPhone1().sendKeys(companyPhone1);
+        }
 
         // Update Scope of Work
-        editVendorObject.inputScopeOfWork().clear();
-        editVendorObject.inputScopeOfWork().sendKeys(scopeOfWork);
+        if (editVendorObject.inputScopeOfWork().getText() != scopeOfWork) {
+            editVendorObject.inputScopeOfWork().clear();
+            editVendorObject.inputScopeOfWork().sendKeys(scopeOfWork);
+        }
 
         // Update Detail Scope of Work
-        editVendorObject.inputDetailScopeOfWork().clear();
-        editVendorObject.inputDetailScopeOfWork().sendKeys(detailScopeOfWork);
+        if (editVendorObject.inputDetailScopeOfWork().getText() != detailScopeOfWork) {
+            editVendorObject.inputDetailScopeOfWork().clear();
+            editVendorObject.inputDetailScopeOfWork().sendKeys(detailScopeOfWork);
+        }
 
         // Update Business Category
         editVendorObject.buttonAddBusinessCategory().click();
@@ -100,20 +108,26 @@ public class editVendorPage extends BasePage {
         sleep(500);
 
         // Update Address
-        editVendorObject.inputAddress().clear();
-        editVendorObject.inputAddress().sendKeys(address);
+        if (editVendorObject.inputAddress().getText() != address) {
+            editVendorObject.inputAddress().clear();
+            editVendorObject.inputAddress().sendKeys(address);
+        }
 
         // Update City
-        editVendorObject.inputCity().clear();
-        editVendorObject.inputCity().sendKeys(city);
+        if (editVendorObject.inputCity().getText() != city) {
+            editVendorObject.inputCity().clear();
+            editVendorObject.inputCity().sendKeys(city);
+        }
 
         // Update Country
         editVendorObject.comboboxCoutry().click();
         editVendorObject.selectCountryDynamic(country).click();
 
         // Update Postal Code
-        editVendorObject.inputPostalCode().clear();
-        editVendorObject.inputPostalCode().sendKeys(postalCode);
+        if (editVendorObject.inputPostalCode().getText() != postalCode) {
+            editVendorObject.inputPostalCode().clear();
+            editVendorObject.inputPostalCode().sendKeys(postalCode);
+        }
 
         // Update Functionary of Company
         int totalFunctionary = editVendorObject.tablerowFunctionaryOfCompany().size();
@@ -143,7 +157,8 @@ public class editVendorPage extends BasePage {
     }
 
     public void updateTaxInformation() {
-
+        editVendorObject.divTaxInformation().click();
+        sleep(500);
     }
 
     public void updatePaymentInformation() {

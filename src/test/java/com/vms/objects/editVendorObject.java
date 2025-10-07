@@ -252,6 +252,110 @@ public class editVendorObject {
         return driver.findElement(By.xpath("//*//div[@class = 'editdata']//input[@id = 'sktFileUpload']"));
     }
 
+    public WebElement comboboxEFaktur() {
+        return driver.findElement(By.xpath("//*//div[@class = 'editdata']//select[@id = 'efaktur']"));
+    }
+
+    public WebElement selectEFakturDynamic(String text) {
+        return driver.findElement(
+                By.xpath("//*//div[@class = 'editdata']//select[@id = 'efaktur']/option[text() = '" + text + "']"));
+    }
+
+    public WebElement comboboxPkp() {
+        return driver.findElement(By.xpath("//*//div[@class = 'editdata']//select[@id = 'pkp']"));
+    }
+
+    public WebElement selectPkpDynamic(String text) {
+        return driver.findElement(
+                By.xpath("//*//div[@class = 'editdata']//select[@id = 'pkp']/option[text() = '" + text + "']"));
+    }
+
+    public WebElement buttonDeleteSppkp() {
+        return driver.findElement(By.xpath(
+                "//*//div[@class = 'editdata']//label[text() = 'SPPKP']/following-sibling::button[contains(@class, 'btn-delete')]"));
+    }
+
+    public WebElement uploadSppkp() {
+        return driver.findElement(By.xpath("//*//div[@class = 'editdata']//input[@id = 'sppkp-upload']"));
+    }
+
+    public WebElement inputSppkpNumber() {
+        return driver.findElement(By.xpath("//*//div[@class = 'editdata']//input[@id = 'sppkpNum']"));
+    }
+
+    public WebElement buttonDeleteNonPkp() {
+        return driver.findElement(By.xpath(
+                "//*//div[@class = 'editdata']//label[text() = 'Evidence Non PKP']/following-sibling::button[contains(@class, 'btn-delete')]"));
+    }
+
+    public WebElement uploadNonPkp() {
+        return driver.findElement(By.xpath("//*//div[@class = 'editdata']//input[@id = 'evidence-upload']"));
+    }
+
+    public WebElement comboboxHasSkb() {
+        return driver.findElement(By.xpath("//*//div[@class = 'editdata']//select[@id = 'skb']"));
+    }
+
+    public WebElement selectHasSkbDynamic(String text) {
+        return driver.findElement(
+                By.xpath("//*//div[@class = 'editdata']//select[@id = 'skb']/option[text() = '" + text + "']"));
+    }
+
+    public WebElement buttonDeleteSkb() {
+        return driver.findElement(By.xpath(
+                "//*//div[@class = 'editdata']//label[text() = 'SKB']/following-sibling::button[contains(@class, 'btn-delete')]"));
+    }
+
+    public WebElement uploadSkb() {
+        return driver.findElement(By.xpath("//*//div[@class = 'editdata']//input[@id = 'skbDoc-upload']"));
+    }
+
+    public WebElement buttonAddVat() {
+        return driver.findElement(By.xpath("//*//div[@class = 'editdata']//button[@data-table-id = 'vat-table']"));
+    }
+
+    public WebElement buttonEditVatDynamic(int count) {
+        return driver.findElement(By.xpath("//*//div[@class = 'editdata']//table[@id = 'vat-table']/tbody/tr[" + count
+                + "]//button[@class = 'edit-row']"));
+    }
+
+    public WebElement inputSearchVat() {
+        return driver
+                .findElement(By.xpath("//*//div[@id = 'VATGrid']//input[@aria-label = 'Transaction Type']"));
+    }
+
+    public WebElement checkboxVat(String text) {
+        return driver.findElement(By.xpath(
+                "//*//div[@id = 'VATGrid']//td[contains(text(), '" + text + ")]/../td/input"));
+    }
+
+    public WebElement buttonSaveVat() {
+        return driver.findElement(By.xpath("//*//div[@id = 'VATModal']//button[@id = 'btnSaveVAT']"));
+    }
+
+    public WebElement buttonAddWht() {
+        return driver.findElement(By.xpath("//*//div[@class = 'editdata']//button[@data-table-id = 'wht-table']"));
+    }
+
+    public WebElement buttonEditWhtDynamic(int count) {
+        return driver.findElement(By.xpath("//*//div[@class = 'editdata']//table[@id = 'wht-table']/tbody/tr[" + count
+                + "]//button[@class = 'edit-row']"));
+    }
+
+    public WebElement inputSearchWht() {
+        return driver
+                .findElement(By.xpath("//*//div[@id = 'WHTGrid']//input[@aria-label = 'Transaction Type']"));
+    }
+
+    public WebElement checkboxWht(String text) {
+        return driver.findElement(By.xpath(
+                "//*//div[@id = 'WHTGrid']//td[contains(text(), '" + text + ")]/../td/input"));
+    }
+
+    public WebElement buttonSaveWht() {
+        return driver.findElement(By.xpath("//*//div[@id = 'WHTModal']//button[@id = 'btnSaveWHT']"));
+    }
+
     public WebElement buttonSubmitVendor() {
         return driver.findElement(By.xpath("//*//button[@id = 'btnSubmit']"));
     }

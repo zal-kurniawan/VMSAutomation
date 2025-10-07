@@ -14,7 +14,7 @@ public class editVendor extends BaseTest {
     private static vendorDatabasePage vendorDatabasePage;
     private static vendorDetailPage vendorDetailPage;
     private static editVendorPage editVendorPage;
-    public String vendorName = "TESTVMSBUGS004, CV";
+    public String vendorName = "TESTVMSBUGS004";
     public String[] vendorCategory = { "trade", "nonTrade" };
 
     @BeforeClass
@@ -42,8 +42,8 @@ public class editVendor extends BaseTest {
         String[] businessArea = { "POINTs", "TCO", "GTOPAS" };
         String tradingName = "TESTVMSBUGSUPDATE004";
         String[][] contactPerson = {
-                { "FHSODK", "Sales", "0812390239", "budi@gmail.com", "485019" },
-                { "GKPWEO", "Marketing", "0812390239", "udin@gmail.com", "540823" }
+                { "FHSODK", "Sales", "0812390239", "budi@gmail.com", "485012" },
+                { "GKPWEO", "Marketing", "0812390239", "udin@gmail.com", "540824" }
         };
         String companyPhone1 = "8091203910";
         String scopeOfWork = "TestUpdate";
@@ -95,23 +95,40 @@ public class editVendor extends BaseTest {
         }
     }
 
-    // @Test
-    // public void editVendorStage3() throws InterruptedException {
-    // if (individualRun) {
-    // // Login vm staff
-    // login.loginVMS("fahmi.budiman", "123");
-    // // Open vendor database page
-    // vendorDatabasePage.openVendorDatabasePage();
-    // // Search vendor
-    // vendorDatabasePage.filterByVendorName(vendorName);
-    // // Open vendor detail page
-
-    // }
-    // // Edit vendor stage 3
-
-    // if (individualRun) {
-    // // Submit
-
-    // }
-    // }
+    @Test(priority = 3)
+    public void editVendorStage3() throws InterruptedException {
+        if (individualRun) {
+            // Login vm staff
+            login.loginVMS("fahmi.budiman", "123");
+            // Open vendor database page
+            vendorDatabasePage.openVendorDatabasePage();
+            // Search vendor
+            vendorDatabasePage.filterByVendorName(vendorName);
+            // Open vendor detail page
+            vendorDatabasePage.openVendorDetail(vendorName);
+            // Open edit vendor page
+            vendorDetailPage.openEditVendorPage();
+        }
+        // Edit vendor stage 3
+        String npwp = "";
+        String npwpNumber = "1230912039";
+        String taxAddress = "Jl. Dr. Satrio No 10, Kec. Kuningan";
+        String taxCity = "Jakarta Selatan";
+        String taxCountry = "Angola";
+        String taxPostalCode = "65019";
+        String copyOfNpwp = "";
+        String skt = "";
+        String eFaktur = "";
+        String pkp = "";
+        String sppkp = "";
+        String sppkpNumber = "1203912039";
+        String nonPkp = "";
+        String hasSkb = "";
+        String skb = "";
+        editVendorPage.updateTaxInformation();
+        if (individualRun) {
+            // Submit
+            editVendorPage.submitUpdateVendor();
+        }
+    }
 }

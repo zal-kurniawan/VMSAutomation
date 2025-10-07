@@ -3,15 +3,14 @@
 <suite name="Failed suite [Surefire suite]" verbose="0">
   <test thread-count="5" name="Surefire test(failed)" verbose="0">
     <classes>
-      <class name="com.vms.tests.editVendor">
+      <class name="com.vms.tests.registrationVendor">
         <methods>
-          <include name="editVendorStage2"/>
           <include name="setupSuite"/>
-          <include name="editVendorStage1"/>
           <include name="init"/>
           <include name="teardownSuite"/>
+          <include name="vendorRegistrationByVMStaff"/>
         </methods>
-      </class> <!-- com.vms.tests.editVendor -->
+      </class> <!-- com.vms.tests.registrationVendor -->
     </classes>
   </test> <!-- Surefire test(failed) -->
 </suite> <!-- Failed suite [Surefire suite] -->

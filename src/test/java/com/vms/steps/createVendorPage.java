@@ -395,7 +395,7 @@ public class createVendorPage extends BasePage {
     public void saveAsDraftVendor() throws InterruptedException {
         sleep(1000);
         createVendorObject.buttonSaveAsDraftVendor().click();
-        sleep(500000);
+        sleep(500);
         createVendorObject.buttonConfirmSaveAsDraft().click();
         sleep(10000);
     }

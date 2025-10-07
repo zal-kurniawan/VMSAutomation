@@ -34,11 +34,11 @@ public class registrationVendor extends BaseTest {
                 String[] businessArea = { "POINTs", "TCO" };
                 String type = "company";
                 String entity = "CV";
-                String vendorName = "TestVMSBugs005";
-                String tradingName = "TestVMSBugs005";
+                String vendorName = "TestVMSBugs006";
+                String tradingName = "TestVMSBugs006";
                 String[][] contact = {
-                                { "AOIWEP", "Finance", "62845049183", "jaja@gmail.com", "405592" },
-                                { "LFKEWE", "Sales", "6280130139", "jojo@gmail.com", "305958" }
+                                { "WJOIEKD", "Finance", "62845049183", "jaja@gmail.com", "582106" },
+                                { "PWEPWEMDLA", "Sales", "6280130139", "jojo@gmail.com", "840296" }
                 };
                 String scopeOfWork = "Testing";
                 String detailScopeOfWork = "TestingTesting";
@@ -47,7 +47,7 @@ public class registrationVendor extends BaseTest {
                 String[][] businessCategory = {
                                 { "After Sales Parts Business", "Chemical", "Oil" },
                                 { "Digital Marketing", "Digital Marketing" },
-                                { "hotel", "hotel" }
+                                // { "hotel", "hotel" },
                 };
                 createVendorPage.fillGeneralInformation(vendorCategory, businessArea, type, entity,
                                 vendorName,
@@ -76,9 +76,9 @@ public class registrationVendor extends BaseTest {
                 // Fill Tax Information
                 String npwp = "Yes";
                 String npwpNumber = "8203928392012321";
-                String npwpName = "TestTxtSAPMultiBank02JZq6celKy2DAiIbcfgd1TestTxtSAP MultiBank02JZq6celKy2DAiIbcfg1234";
-                String npwpAddress = "JlSunterNo.11ABCDEGHIJKLMNOPQRSTUVWXYZ123 JlSunterNo.11ABCDEGHIJKLMNOPQRSTUVWXYZQ1234";
-                String npwpCity = "Jakarta Utara";
+                String npwpName = vendorName;
+                String npwpAddress = "Jl Merdeka No.11";
+                String npwpCity = "Jakarta Pusat";
                 String npwpCountry = "Indonesia";
                 String npwpPostalCode = "51323";
                 String copyOfNpwp = "/Users/rizalkurniawan/Downloads/dummy.pdf";
@@ -91,7 +91,7 @@ public class registrationVendor extends BaseTest {
                 String hasSkb = "Yes";
                 String skb = "/Users/rizalkurniawan/Downloads/dummy.pdf";
                 String[] vat = { "V2 - PPN", "V6 - VAT-In 1.1%", "A1 - PPN Keluaran Reguler" };
-                String[] wht = { "501 - Pelayaran Dalam Negeri yang dibayarkan/ terutang kepada perusahaan pelayaran DN",
+                String[] wht = { "2346 - Jasa logistik",
                                 "2205 - Transaksi Bendaharawan / Pemerintah - BUMN Tertentu",
                                 "2315 - Jasa perancang (design)" };
                 createVendorPage.fillTaxInformation(npwp, npwpNumber, npwpName, npwpAddress, npwpCity, npwpCountry,
@@ -100,18 +100,18 @@ public class registrationVendor extends BaseTest {
 
                 // Fill Payment Information
                 String[][] bankAccount = {
-                                { "BCA - BCASC1", "Jakarta Utara", "IDR", "8091314", "PT.Testing",
+                                { "BCA - BCASC1", "Jakarta Utara", "IDR", "8091314", "Test.BCA",
                                                 "/Users/rizalkurniawan/Downloads/dummy.pdf",
                                                 "/Users/rizalkurniawan/Downloads/dummy.pdf",
                                                 "/Users/rizalkurniawan/Downloads/dummy.pdf" },
-                                // { "BNI - BNISC1", "Jakarta Utara", "IDR", "908131", "PT.Testing",
-                                // "/Users/rizalkurniawan/Downloads/dummy.pdf",
-                                // "/Users/rizalkurniawan/Downloads/dummy.pdf",
-                                // "/Users/rizalkurniawan/Downloads/dummy.pdf" },
-                                // { "BRI - BRISC1", "Jakarta Utara", "IDR", "908131", "PT.Testing",
-                                // "/Users/rizalkurniawan/Downloads/dummy.pdf",
-                                // "/Users/rizalkurniawan/Downloads/dummy.pdf",
-                                // "/Users/rizalkurniawan/Downloads/dummy.pdf" }
+                                { "BNI - BNISC1", "Jakarta Utara", "IDR", "908131", "Test.BNI",
+                                                "/Users/rizalkurniawan/Downloads/dummy.pdf",
+                                                "/Users/rizalkurniawan/Downloads/dummy.pdf",
+                                                "/Users/rizalkurniawan/Downloads/dummy.pdf" },
+                                { "BRI - BRISC1", "Jakarta Utara", "IDR", "908131", "Test.BRI",
+                                                "/Users/rizalkurniawan/Downloads/dummy.pdf",
+                                                "/Users/rizalkurniawan/Downloads/dummy.pdf",
+                                                "/Users/rizalkurniawan/Downloads/dummy.pdf" }
                 };
                 createVendorPage.fillPaymentInformation(bankAccount);
 
@@ -125,14 +125,15 @@ public class registrationVendor extends BaseTest {
                 // Fill Compliance Enhancements
                 String transactionValue = "150000000";
                 String[][] descAndRemarks = {
-                                { "Company Website", "Dummy" },
-                                { "Penelusuran Perkara", "Dummy" },
-                                { "Latar Belakang / Pemegang Saham:", "Dummy" },
-                                { "Informasi Umum (Sumber Google/ situs web resmi pihak ketiga)", "Dummy" },
-                                { "Peta/ Lokasi Situs (Google Maps)", "Dummy" },
+                                { "Company Website", "https://www.solopos.com" },
+                                { "Penelusuran Perkara", "https://www.solopos.com" },
+                                { "Latar Belakang / Pemegang Saham:", "https://www.solopos.com" },
+                                { "Informasi Umum (Sumber Google/ situs web resmi pihak ketiga)",
+                                                "https://www.solopos.com" },
+                                { "Peta/ Lokasi Situs (Google Maps)", "www.mapsgoogle.com" },
                                 { "Informasi Perusahaan (Administrasi Hukum Umum/ Bursa Efek Indonesia (Perusahaan Publik))",
                                                 "Dummy" },
-                                { "Penelusuran informasi lainnya : Pers/Media", "Dummy" },
+                                { "Penelusuran informasi lainnya : Pers/Media", "https://www.solopos.com" },
                                 { "Penelusuran informasi lainnya : Pengadilan Hukum", "Dummy" },
                                 { "Penelusuran informasi lainnya : News Center", "Dummy" },
                                 { "Penelusuran informasi lainnya : Berita IDX", "Dummy" },
