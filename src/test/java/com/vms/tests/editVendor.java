@@ -14,7 +14,7 @@ public class editVendor extends BaseTest {
     private static vendorDatabasePage vendorDatabasePage;
     private static vendorDetailPage vendorDetailPage;
     private static editVendorPage editVendorPage;
-    public String vendorName = "TESTVMSBUGS004";
+    public String vendorName = "EditVMS001";
     public String[] vendorCategory = { "trade", "nonTrade" };
 
     @BeforeClass
@@ -110,7 +110,7 @@ public class editVendor extends BaseTest {
             vendorDetailPage.openEditVendorPage();
         }
         // Edit vendor stage 3
-        String npwp = "Yes";
+        String npwp = "";
         String npwpName = "";
         String npwpNumber = "1230912039";
         String taxAddress = "Jl. Dr. Satrio No 10, Kec. Kuningan";
@@ -119,15 +119,15 @@ public class editVendor extends BaseTest {
         String taxPostalCode = "65019";
         String copyOfNpwp = "";
         String skt = "";
-        String eFaktur = "Yes";
-        String pkp = "Yes";
+        String eFaktur = "";
+        String pkp = "";
         String sppkp = "";
-        String sppkpNumber = "1203912039";
+        String sppkpNumber = "";
         String nonPkp = "";
-        String hasSkb = "No";
+        String hasSkb = "";
         String skb = "";
-        String[] vat = { "" };
-        String[] wht = { "" };
+        String[] vat = {};
+        String[] wht = {};
         editVendorPage.updateTaxInformation(npwp, npwpNumber, npwpName, taxAddress, taxCity, taxCountry, taxPostalCode,
                 copyOfNpwp, skt, eFaktur, pkp, sppkp, sppkpNumber, nonPkp, hasSkb, skb, vat, wht);
         if (individualRun) {
@@ -153,8 +153,14 @@ public class editVendor extends BaseTest {
 
         // Edit vendor stage 4
         String[][] bankAccounts = {
-                { "" },
-                { "" }
+                { "CIMB NIAGA - NIASC1", "Jakarta Utara", "IDR", "908131", "Test.CIMB",
+                        "/Users/rizalkurniawan/Downloads/dummy.pdf",
+                        "/Users/rizalkurniawan/Downloads/dummy.pdf",
+                        "/Users/rizalkurniawan/Downloads/dummy.pdf" },
+                { "BANK SYARIAH INDONESIA - BSISC1", "Jakarta Utara", "IDR", "908131", "Test.BSI",
+                        "/Users/rizalkurniawan/Downloads/dummy.pdf",
+                        "/Users/rizalkurniawan/Downloads/dummy.pdf",
+                        "/Users/rizalkurniawan/Downloads/dummy.pdf" },
         };
         editVendorPage.updatePaymentInformation(bankAccounts);
 

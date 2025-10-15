@@ -174,7 +174,7 @@ public class editVendorPage extends BasePage {
         }
 
         // Update NPWP Number
-        if (npwp != "") {
+        if (npwpNumber != "") {
             editVendorObject.inputNpwpNumber().clear();
             editVendorObject.inputNpwpNumber().sendKeys(npwpNumber);
         }
@@ -198,6 +198,10 @@ public class editVendorPage extends BasePage {
         }
 
         // Update Npwp Country
+        if (npwpCountry != "") {
+            editVendorObject.comboboxNpwpCountry().click();
+            editVendorObject.selectNpwpCountryDynamic(npwpCountry).click();
+        }
 
         // Update NPWP Postal Code
         if (npwpPostalCode != "") {
@@ -283,8 +287,10 @@ public class editVendorPage extends BasePage {
             editVendorObject.buttonSaveWht().click();
             sleep(500);
         }
+
         scrollToTop();
         editVendorObject.divTaxInformation().click();
+        sleep(500);
     }
 
     public void updatePaymentInformation(String[][] bankAccounts) {
@@ -327,6 +333,24 @@ public class editVendorPage extends BasePage {
         wait.until(ExpectedConditions.visibilityOf(editVendorObject.inputTransactionValue()));
 
         // Update compliance enchancement
+        editVendorObject.inputTransactionValue().clear();
+        editVendorObject.inputTransactionValue().sendKeys(transactionValue);
+        for (int count = 0; count < descAndRemarks.length; count++) {
+            editVendorObject.inputDescAndRemarksDynamic(descAndRemarks[count][0]).clear();
+            editVendorObject.inputDescAndRemarksDynamic(descAndRemarks[count][0]).sendKeys(descAndRemarks[count][1]);
+        }
+        if (dueDilNumber != "") {
+            editVendorObject.inputDueDilNumber().clear();
+            editVendorObject.inputDueDilNumber().sendKeys(dueDilNumber);
+        }
+        if (dueDillAttachment != "") {
+            editVendorObject.uploadDueDilAttachment().sendKeys(dueDillAttachment);
+        }
+        if (mitigationPlan != "") {
+            editVendorObject.inputMitigationPlan().clear();
+            editVendorObject.inputMitigationPlan().sendKeys(mitigationPlan);
+        }
+        editVendorObject.radioButtonExpiredDateDynamic(expiredDate).click();
 
         scrollToTop();
         editVendorObject.divComplianceEnhancements().click();

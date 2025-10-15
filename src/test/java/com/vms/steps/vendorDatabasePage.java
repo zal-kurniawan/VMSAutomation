@@ -2,6 +2,8 @@ package com.vms.steps;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
 import com.vms.common.BasePage;
 import com.vms.objects.navigationObject;
 import com.vms.objects.vendorDatabaseObject;
@@ -35,11 +37,13 @@ public class vendorDatabasePage extends BasePage {
         sleep(500);
         vendorDatabaseObject.inputFilterVendorName().sendKeys(vendorName);
         vendorDatabaseObject.inputFilterVendorName().sendKeys(Keys.ENTER);
-        sleep(1000);
+        wait.until(
+                ExpectedConditions.visibilityOf(vendorDatabaseObject.textVendorNameDynami(vendorName.toUpperCase())));
     }
 
     public void openVendorDetail(String vendorName) throws InterruptedException {
-        vendorDatabaseObject.buttonViewVendorDynamic(vendorName).click();
+        scrollRightOnElement(vendorDatabaseObject.buttonViewVendorDynamic(vendorName.toUpperCase()));
+        vendorDatabaseObject.buttonViewVendorDynamic(vendorName.toUpperCase()).click();
         sleep(1000);
     }
 

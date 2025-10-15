@@ -226,7 +226,7 @@ public class editVendorObject {
 
     public WebElement selectNpwpCountryDynamic(String text) {
         return driver.findElement(By.xpath(
-                "//*//div[@class = 'editdata']//ul[@id = 'select2-npwpCountry-results']//li[contains(text(), '" + text
+                "//*//ul[@id = 'select2-npwpCountry-results']//li[contains(text(), '" + text
                         + "')]"));
     }
 
@@ -442,7 +442,7 @@ public class editVendorObject {
         return driver.findElement(By.xpath("//*//div[@class = 'editdata']//textarea[@name = 'due-diligence-number']"));
     }
 
-    public WebElement uploadDueDil() {
+    public WebElement uploadDueDilAttachment() {
         return driver.findElement(By.xpath(
                 "//*//div[@class = 'editdata']//td[text() = 'Due Diligence Attachment']/following-sibling::td//div[@class = 'file-upload']/input[@type = 'file']"));
     }

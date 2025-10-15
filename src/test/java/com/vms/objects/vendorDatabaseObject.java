@@ -19,6 +19,10 @@ public class vendorDatabaseObject {
         return driver.findElement(By.xpath("//*//input[@aria-label = 'Vendor Name']"));
     }
 
+    public WebElement textVendorNameDynami(String text) {
+        return driver.findElement(By.xpath("//*//div[@id = 'VendorDBGrid']//td[contains(text(), '" + text + "')]"));
+    }
+
     public WebElement buttonViewVendorDynamic(String text) {
         return driver.findElement(By
                 .xpath("//*//td[contains(text(), '" + text + "')]/following-sibling::td//a[@title = 'View Details']"));
