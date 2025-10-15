@@ -2,10 +2,8 @@ package com.vms.steps;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import com.vms.common.BasePage;
 import com.vms.objects.editVendorObject;
-import com.vms.tests.editVendor;
 
 public class editVendorPage extends BasePage {
     private editVendorObject editVendorObject;
