@@ -14,12 +14,9 @@ public class loginPage extends BasePage {
     }
 
     public void loginVMS(String username, String password) throws InterruptedException {
-        sleep(1000);
-        loginObject.inputUsername().isDisplayed();
+        waitElement(loginObject.inputUsername());
         loginObject.inputUsername().sendKeys(username);
-        loginObject.inputPassword().isDisplayed();
         loginObject.inputPassword().sendKeys(password);
-        loginObject.buttonLogin().isDisplayed();
         loginObject.buttonLogin().click();
     }
 }

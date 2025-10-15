@@ -1,8 +1,11 @@
 package com.vms.steps;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
 import com.vms.common.BasePage;
 import com.vms.objects.editVendorObject;
+import com.vms.tests.editVendor;
 
 public class editVendorPage extends BasePage {
     private editVendorObject editVendorObject;
@@ -51,17 +54,17 @@ public class editVendorPage extends BasePage {
         int totalContactPerson = editVendorObject.tablerowContactPerson().size();
         for (int countContactPerson = 0; countContactPerson < contactPerson.length; countContactPerson++) {
             editVendorObject.buttonAddContactPerson().click();
-            editVendorObject.inputContactPersonNameDynamic(totalContactPerson + 1)
-                    .sendKeys(contactPerson[countContactPerson][0]);
-            editVendorObject.inputContactPositionDynamic(totalContactPerson + 1)
-                    .sendKeys(contactPerson[countContactPerson][1]);
-            editVendorObject.inputContactPhoneDynamic(totalContactPerson + 1)
-                    .sendKeys(contactPerson[countContactPerson][2]);
-            editVendorObject.inputContactEmailDynamic(totalContactPerson + 1)
-                    .sendKeys(contactPerson[countContactPerson][3]);
-            editVendorObject.inputContactNikDynamic(totalContactPerson + 1)
-                    .sendKeys(contactPerson[countContactPerson][4]);
             totalContactPerson++;
+            editVendorObject.inputContactPersonNameDynamic(totalContactPerson)
+                    .sendKeys(contactPerson[countContactPerson][0]);
+            editVendorObject.inputContactPositionDynamic(totalContactPerson)
+                    .sendKeys(contactPerson[countContactPerson][1]);
+            editVendorObject.inputContactPhoneDynamic(totalContactPerson)
+                    .sendKeys(contactPerson[countContactPerson][2]);
+            editVendorObject.inputContactEmailDynamic(totalContactPerson)
+                    .sendKeys(contactPerson[countContactPerson][3]);
+            editVendorObject.inputContactNikDynamic(totalContactPerson)
+                    .sendKeys(contactPerson[countContactPerson][4]);
         }
         // Update Company Phone 1
         if (editVendorObject.inputCompanyPhone1().getText() != companyPhone1) {
@@ -133,13 +136,13 @@ public class editVendorPage extends BasePage {
         int totalFunctionary = editVendorObject.tablerowFunctionaryOfCompany().size();
         for (int countFunctionary = 0; countFunctionary < functionaryOfCompany.length; countFunctionary++) {
             editVendorObject.buttonAddFunctionaryOfCompany().click();
-            editVendorObject.inputFunctionaryNameDynamic(totalFunctionary + 1)
-                    .sendKeys(functionaryOfCompany[countFunctionary][0]);
-            editVendorObject.inputFunctionaryPositionDynamic(totalFunctionary + 1)
-                    .sendKeys(functionaryOfCompany[countFunctionary][1]);
-            editVendorObject.inputFunctionaryEmailDynamic(totalFunctionary + 1)
-                    .sendKeys(functionaryOfCompany[countFunctionary][2]);
             totalFunctionary++;
+            editVendorObject.inputFunctionaryNameDynamic(totalFunctionary)
+                    .sendKeys(functionaryOfCompany[countFunctionary][0]);
+            editVendorObject.inputFunctionaryPositionDynamic(totalFunctionary)
+                    .sendKeys(functionaryOfCompany[countFunctionary][1]);
+            editVendorObject.inputFunctionaryEmailDynamic(totalFunctionary)
+                    .sendKeys(functionaryOfCompany[countFunctionary][2]);
         }
 
         // Update Document Legality
@@ -156,21 +159,177 @@ public class editVendorPage extends BasePage {
         sleep(500);
     }
 
-    public void updateTaxInformation() {
+    public void updateTaxInformation(String npwp, String npwpNumber, String npwpName, String npwpAddress,
+            String npwpCity, String npwpCountry, String npwpPostalCode, String copyOfNpwp, String skt, String eFaktur,
+            String pkp, String sppkp, String sppkpNumber, String nonPkp, String hasSkb, String skb, String[] vat,
+            String[] wht) {
+        // Open Tax Information Tab
         editVendorObject.divTaxInformation().click();
-        sleep(500);
+        wait.until(ExpectedConditions.visibilityOf(editVendorObject.comboboxNpwp()));
+
+        // Update NPWP
+        if (npwp != "") {
+            editVendorObject.comboboxNpwp().clear();
+            editVendorObject.selectNpwpDynamic(npwp.toLowerCase()).click();
+        }
+
+        // Update NPWP Number
+        if (npwp != "") {
+            editVendorObject.inputNpwpNumber().clear();
+            editVendorObject.inputNpwpNumber().sendKeys(npwpNumber);
+        }
+
+        // Update NPWP Name
+        if (npwpName != "") {
+            editVendorObject.inputNpwpName().clear();
+            editVendorObject.inputNpwpName().sendKeys(npwpName);
+        }
+
+        // Update NPWP Address
+        if (npwpAddress != "") {
+            editVendorObject.inputNpwpAddress().clear();
+            editVendorObject.inputNpwpAddress().sendKeys(npwpAddress);
+        }
+
+        // Update NPWP City
+        if (npwpCity != "") {
+            editVendorObject.inputNpwpCity().clear();
+            editVendorObject.inputNpwpCity().sendKeys(npwpCity);
+        }
+
+        // Update Npwp Country
+
+        // Update NPWP Postal Code
+        if (npwpPostalCode != "") {
+            editVendorObject.inputNpwpPostalCode().clear();
+            editVendorObject.inputNpwpPostalCode().sendKeys(npwpPostalCode);
+        }
+
+        // Update Copy of NPWP
+        if (copyOfNpwp != "") {
+            editVendorObject.uploadCopyOfNpwp().sendKeys(copyOfNpwp);
+        }
+
+        // Upload SKT
+        if (skt != "") {
+            editVendorObject.uploadSkt().sendKeys(skt);
+        }
+
+        // Update eFaktur
+        if (eFaktur != "") {
+            editVendorObject.comboboxEFaktur().click();
+            editVendorObject.selectEFakturDynamic(eFaktur.toLowerCase()).click();
+        }
+
+        // Update PKP
+        if (pkp != "") {
+            editVendorObject.comboboxPkp().click();
+            editVendorObject.selectPkpDynamic(pkp.toLowerCase()).click();
+        }
+
+        // Update SPPKP
+        if (sppkp != "" && pkp == "Yes") {
+            editVendorObject.uploadSppkp().sendKeys(sppkp);
+        }
+
+        // Update SPPKP Number
+        if (sppkpNumber != "" && pkp == "Yes") {
+            editVendorObject.inputSppkpNumber().clear();
+            editVendorObject.inputSppkpNumber().sendKeys(sppkpNumber);
+        }
+
+        // Update Non PKP
+        if (nonPkp != "" && pkp == "No") {
+            editVendorObject.uploadNonPkp().sendKeys(nonPkp);
+        }
+
+        // Update Has SKB
+        if (hasSkb != "") {
+            editVendorObject.comboboxHasSkb().click();
+            editVendorObject.selectHasSkbDynamic(skb.toLowerCase()).click();
+        }
+
+        // Update SKB
+        if (skb != "" && hasSkb == "Yes") {
+            editVendorObject.uploadSkb().sendKeys(skb);
+        }
+
+        // Update VAT
+        if (vat.length > 0 && pkp == "Yes") {
+            editVendorObject.buttonAddVat().click();
+            sleep(500);
+            for (int countVat = 0; countVat < vat.length; countVat++) {
+                String vatTemp = vat[countVat].replaceFirst("^(\\w+).*", "$1");
+                editVendorObject.inputSearchVat().clear();
+                editVendorObject.inputSearchVat().sendKeys(vatTemp.toLowerCase());
+                sleep(500);
+                editVendorObject.checkboxVatDynamic(vat[countVat]).click();
+            }
+            editVendorObject.buttonSaveVat().click();
+            sleep(500);
+        }
+
+        // Update WHT
+        if (wht.length > 0) {
+            editVendorObject.buttonAddWht().click();
+            sleep(500);
+            for (int countWht = 0; countWht < wht.length; countWht++) {
+                String whtTemp = wht[countWht].replaceFirst("^(\\w+).*", "$1");
+                editVendorObject.inputSearchWht().clear();
+                editVendorObject.inputSearchWht().sendKeys(whtTemp.toLowerCase());
+                sleep(500);
+                editVendorObject.checkboxWhtDynamic(wht[countWht]).click();
+            }
+            editVendorObject.buttonSaveWht().click();
+            sleep(500);
+        }
+        scrollToTop();
+        editVendorObject.divTaxInformation().click();
     }
 
-    public void updatePaymentInformation() {
+    public void updatePaymentInformation(String[][] bankAccounts) {
+        editVendorObject.divPaymentInformation().click();
+        wait.until(ExpectedConditions.visibilityOf(editVendorObject.buttonAddBankAccount()));
 
+        // Update bank account
+        int totalBankAccount = editVendorObject.tableBankAccount().size();
+        for (int countBankAccount = 0; countBankAccount < bankAccounts.length; countBankAccount++) {
+            editVendorObject.buttonAddBankAccount().click();
+            totalBankAccount++;
+            scrollRightOnElement(editVendorObject.buttonEditBankAccount(totalBankAccount));
+            editVendorObject.buttonEditBankAccount(totalBankAccount).click();
+            sleep(500);
+            editVendorObject.comboBoxBankName().click();
+            editVendorObject.selectBankNameDynamic(bankAccounts[countBankAccount][0]).click();
+            editVendorObject.inputBranch().sendKeys(bankAccounts[countBankAccount][1]);
+            editVendorObject.comboBoxCurrency().click();
+            editVendorObject.selectCurrencyDynamic(bankAccounts[countBankAccount][2]).click();
+            editVendorObject.inputAccountNumber().sendKeys(bankAccounts[countBankAccount][3]);
+            editVendorObject.inputAccountName().sendKeys(bankAccounts[countBankAccount][4]);
+            editVendorObject.uploadHeaderRekening().sendKeys(bankAccounts[countBankAccount][5]);
+            editVendorObject.uploadBankInformation().sendKeys(bankAccounts[countBankAccount][6]);
+            editVendorObject.uploadFinanceConfirmation().sendKeys(bankAccounts[countBankAccount][7]);
+            editVendorObject.buttonSaveBankAccount().click();
+            sleep(500);
+        }
+
+        scrollToTop();
+        editVendorObject.divPaymentInformation().click();
     }
 
     public void updateVendorCategory() {
 
     }
 
-    public void updateComplianceEnhancement() {
+    public void updateComplianceEnhancement(String transactionValue, String[][] descAndRemarks, String dueDilNumber,
+            String dueDillAttachment, String mitigationPlan, String expiredDate) {
+        editVendorObject.divComplianceEnhancements().click();
+        wait.until(ExpectedConditions.visibilityOf(editVendorObject.inputTransactionValue()));
 
+        // Update compliance enchancement
+
+        scrollToTop();
+        editVendorObject.divComplianceEnhancements().click();
     }
 
     public void submitUpdateVendor() {

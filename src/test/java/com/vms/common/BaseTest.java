@@ -39,7 +39,6 @@ public class BaseTest {
     @AfterSuite(alwaysRun = true)
     public static void teardownSuite() {
         if (driver != null) {
-            System.out.println("Test selesai. Menutup browser...");
             driver.quit(); // Menutup browser setelah setiap test
         }
     }

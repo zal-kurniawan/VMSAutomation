@@ -34,11 +34,11 @@ public class registrationVendor extends BaseTest {
                 String[] businessArea = { "POINTs", "TCO" };
                 String type = "company";
                 String entity = "CV";
-                String vendorName = "TestVMSBugs006";
-                String tradingName = "TestVMSBugs006";
+                String vendorName = "TestVMSBugs010";
+                String tradingName = "TestVMSBugs010";
                 String[][] contact = {
-                                { "WJOIEKD", "Finance", "62845049183", "jaja@gmail.com", "582106" },
-                                { "PWEPWEMDLA", "Sales", "6280130139", "jojo@gmail.com", "840296" }
+                                { "WJOIEKD", "Finance", "62845049183", "jaja@gmail.com", "582110" },
+                                { "PWEPWEMDLA", "Sales", "6280130139", "jojo@gmail.com", "840210" }
                 };
                 String scopeOfWork = "Testing";
                 String detailScopeOfWork = "TestingTesting";
@@ -127,11 +127,11 @@ public class registrationVendor extends BaseTest {
                 String[][] descAndRemarks = {
                                 { "Company Website", "https://www.solopos.com" },
                                 { "Penelusuran Perkara", "https://www.solopos.com" },
-                                { "Latar Belakang / Pemegang Saham:", "https://www.solopos.com" },
-                                { "Informasi Umum (Sumber Google/ situs web resmi pihak ketiga)",
+                                { "Latar Belakang / Pemegang Saham", "https://www.solopos.com" },
+                                { "Informasi Umum (Sumber Google / situs web resmi pihak ketiga)",
                                                 "https://www.solopos.com" },
-                                { "Peta/ Lokasi Situs (Google Maps)", "www.mapsgoogle.com" },
-                                { "Informasi Perusahaan (Administrasi Hukum Umum/ Bursa Efek Indonesia (Perusahaan Publik))",
+                                { "Peta / Lokasi Situs (Google Maps)", "www.mapsgoogle.com" },
+                                { "Informasi Perusahaan (Administrasi Hukum Umum / Bursa Efek Indonesia (Perusahaan Publik))",
                                                 "Dummy" },
                                 { "Penelusuran informasi lainnya : Pers/Media", "https://www.solopos.com" },
                                 { "Penelusuran informasi lainnya : Pengadilan Hukum", "Dummy" },

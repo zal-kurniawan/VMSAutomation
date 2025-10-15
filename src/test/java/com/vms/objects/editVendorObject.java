@@ -310,6 +310,10 @@ public class editVendorObject {
         return driver.findElement(By.xpath("//*//div[@class = 'editdata']//input[@id = 'skbDoc-upload']"));
     }
 
+    public List<WebElement> tableVat() {
+        return driver.findElements(By.xpath("//*//div[@class = 'editdata']//table[@id = 'vat-table']/tbody/tr"));
+    }
+
     public WebElement buttonAddVat() {
         return driver.findElement(By.xpath("//*//div[@class = 'editdata']//button[@data-table-id = 'vat-table']"));
     }
@@ -324,13 +328,17 @@ public class editVendorObject {
                 .findElement(By.xpath("//*//div[@id = 'VATGrid']//input[@aria-label = 'Transaction Type']"));
     }
 
-    public WebElement checkboxVat(String text) {
+    public WebElement checkboxVatDynamic(String text) {
         return driver.findElement(By.xpath(
                 "//*//div[@id = 'VATGrid']//td[contains(text(), '" + text + ")]/../td/input"));
     }
 
     public WebElement buttonSaveVat() {
         return driver.findElement(By.xpath("//*//div[@id = 'VATModal']//button[@id = 'btnSaveVAT']"));
+    }
+
+    public List<WebElement> tableWht() {
+        return driver.findElements(By.xpath("//*//div[@class = 'editdata']//table[@id = 'wht-table']/tbody/tr"));
     }
 
     public WebElement buttonAddWht() {
@@ -347,13 +355,105 @@ public class editVendorObject {
                 .findElement(By.xpath("//*//div[@id = 'WHTGrid']//input[@aria-label = 'Transaction Type']"));
     }
 
-    public WebElement checkboxWht(String text) {
+    public WebElement checkboxWhtDynamic(String text) {
         return driver.findElement(By.xpath(
                 "//*//div[@id = 'WHTGrid']//td[contains(text(), '" + text + ")]/../td/input"));
     }
 
     public WebElement buttonSaveWht() {
         return driver.findElement(By.xpath("//*//div[@id = 'WHTModal']//button[@id = 'btnSaveWHT']"));
+    }
+
+    public List<WebElement> tableBankAccount() {
+        return driver
+                .findElements(By.xpath("//*//div[@class = 'editdata']//table[@id = 'bank-account-table']/tbody/tr"));
+    }
+
+    public WebElement buttonAddBankAccount() {
+        return driver
+                .findElement(By.xpath("//*//div[@class = 'editdata']//button[@data-table-id = 'bank-account-table']"));
+    }
+
+    public WebElement buttonEditBankAccount(int count) {
+        return driver.findElement(By.xpath(
+                "//*//div[@class = 'editdata']//table[@id = 'bank-account-table']/tbody/tr[" + count
+                        + "]//button[@class = 'edit-row']"));
+    }
+
+    public WebElement comboBoxBankName() {
+        return driver.findElement(
+                By.xpath("//*//select[@id = 'bank-name']/following-sibling::span//span[@role = 'combobox']"));
+    }
+
+    public WebElement selectBankNameDynamic(String text) {
+        return driver.findElement(
+                By.xpath("//*//ul[@id = 'select2-bank-name-results']/li[contains(text(), '" + text + "')]"));
+    }
+
+    public WebElement inputBranch() {
+        return driver.findElement(By.xpath("//*//textarea[@id = 'branch']"));
+    }
+
+    public WebElement comboBoxCurrency() {
+        return driver.findElement(
+                By.xpath("//*//select[@id = 'bank-currency']/following-sibling::span//span[@role = 'combobox']"));
+    }
+
+    public WebElement selectCurrencyDynamic(String text) {
+        return driver.findElement(
+                By.xpath("//*//ul[@id = 'select2-bank-currency-results']/li[contains(text(), '" + text + "')]"));
+    }
+
+    public WebElement inputAccountNumber() {
+        return driver.findElement(By.xpath("//*//textarea[@id = 'accountNumber']"));
+    }
+
+    public WebElement inputAccountName() {
+        return driver.findElement(By.xpath("//*//textarea[@id = 'accountName']"));
+    }
+
+    public WebElement uploadHeaderRekening() {
+        return driver.findElement(By.xpath("//*//input[@id = 'header-rekening-koran']"));
+    }
+
+    public WebElement uploadBankInformation() {
+        return driver.findElement(By.xpath("//*//input[@id = 'bank-info-letter']"));
+    }
+
+    public WebElement uploadFinanceConfirmation() {
+        return driver.findElement(By.xpath("//*//input[@id = 'finance-confirmation']"));
+    }
+
+    public WebElement buttonSaveBankAccount() {
+        return driver.findElement(By.xpath("//*//button[@id = 'btnSaveCreateBankAccount']"));
+    }
+
+    public WebElement inputTransactionValue() {
+        return driver.findElement(By.xpath("//*//div[@class = 'editdata']//input[@id = 'estimasi_nilai_trx']"));
+    }
+
+    public WebElement inputDescAndRemarksDynamic(String text) {
+        return driver.findElement(
+                By.xpath("//*//div[@class = 'editdata']//table[@id = 'compliance-enhancement-table']//input[@value = '"
+                        + text + "']/../following-sibling::td/textarea"));
+    }
+
+    public WebElement inputDueDilNumber() {
+        return driver.findElement(By.xpath("//*//div[@class = 'editdata']//textarea[@name = 'due-diligence-number']"));
+    }
+
+    public WebElement uploadDueDil() {
+        return driver.findElement(By.xpath(
+                "//*//div[@class = 'editdata']//td[text() = 'Due Diligence Attachment']/following-sibling::td//div[@class = 'file-upload']/input[@type = 'file']"));
+    }
+
+    public WebElement inputMitigationPlan() {
+        return driver.findElement(By.xpath("//*//div[@class = 'editdata']//textarea[@name = 'mitigation-plan']"));
+    }
+
+    public WebElement radioButtonExpiredDateDynamic(String text) {
+        return driver.findElement(By.xpath(
+                "//*//div[@class = 'editdata']//div[contains(text(), '" + text + "')]/../div[@class = 'color-box']"));
     }
 
     public WebElement buttonSubmitVendor() {

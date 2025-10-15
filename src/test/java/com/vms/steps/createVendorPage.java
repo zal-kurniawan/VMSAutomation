@@ -2,6 +2,7 @@ package com.vms.steps;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
 import com.vms.common.BasePage;
 import com.vms.objects.createVendorObject;
 
@@ -18,7 +19,7 @@ public class createVendorPage extends BasePage {
             String type, String entity, String vendorName, String tradingName, String[][] contact, String scopeOfWork,
             String detailScopeOfWork, String dueDilType, String compliance, String[][] businessCategory)
             throws InterruptedException {
-        sleep(1000);
+        waitElement(createVendorObject.divGeneralInformation());
         try {
             // Open General Information
             createVendorObject.divGeneralInformation().click();
@@ -213,16 +214,17 @@ public class createVendorPage extends BasePage {
         createVendorObject.inputNpwpName().sendKeys(npwpName);
         createVendorObject.inputNpwpAddress().sendKeys(npwpAddress);
         createVendorObject.inputNpwpCity().sendKeys(npwpCity);
-        sleep(500);
         createVendorObject.comboBoxNpwpCountry().click();
+        waitElement(createVendorObject.selectNpwpCountryDynamic(npwpCountry));
         createVendorObject.selectNpwpCountryDynamic(npwpCountry).click();
         createVendorObject.inputNpwpPostalCode().sendKeys(npwpPostalCode);
         createVendorObject.uploadCopyOfNpwp().sendKeys(copyOfNpwp);
         createVendorObject.uploadSkt().sendKeys(skt);
         createVendorObject.comboBoxEfaktur().click();
+        waitElement(createVendorObject.selectEfakturDynamic(eFaktur.toLowerCase()));
         createVendorObject.selectEfakturDynamic(eFaktur.toLowerCase()).click();
         createVendorObject.comboBoxPkp().click();
-        sleep(500);
+        waitElement(createVendorObject.selectPkpDynamic(pkp.toLowerCase()));
         createVendorObject.selectPkpDynamic(pkp.toLowerCase()).click();
 
         if (pkp.equalsIgnoreCase("yes")) {
@@ -241,7 +243,7 @@ public class createVendorPage extends BasePage {
         // VAT
         if (pkp.equalsIgnoreCase("yes")) {
             createVendorObject.buttonAddVat().click();
-            sleep(500);
+            waitElement(createVendorObject.inputSearchVat());
             for (int count = 0; count < vat.length; count++) {
                 String vatTemp = vat[count].replaceFirst("^(\\w+).*", "$1");
                 createVendorObject.inputSearchVat().clear();
@@ -255,7 +257,7 @@ public class createVendorPage extends BasePage {
 
         // WHT
         createVendorObject.buttonAddWht().click();
-        sleep(500);
+        waitElement(createVendorObject.inputSearchWht());
         for (int count = 0; count < wht.length; count++) {
             String whtTemp = wht[count].replaceFirst("^(\\w+).*", "$1");
             createVendorObject.inputSearchWht().clear();

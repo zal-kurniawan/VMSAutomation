@@ -19,7 +19,7 @@ public class vendorRegistrationPage extends BasePage {
 
     public void openVendorRegistrationPage() throws InterruptedException {
         navigationObject.linkVendorRegistration().click();
-        Thread.sleep(1000);
+        waitElement(vendorRegistrationObject.buttonCreateVendor());
         String currentUrl = driver.getCurrentUrl();
         String expectedUrl = "https://tam-vms.southeastasia.cloudapp.azure.com/vms/VendorRegistration/VendorRegistration";
         Assert.assertEquals(currentUrl, expectedUrl, "Gagal membuka halaman Vendor Registration");

@@ -110,7 +110,8 @@ public class editVendor extends BaseTest {
             vendorDetailPage.openEditVendorPage();
         }
         // Edit vendor stage 3
-        String npwp = "";
+        String npwp = "Yes";
+        String npwpName = "";
         String npwpNumber = "1230912039";
         String taxAddress = "Jl. Dr. Satrio No 10, Kec. Kuningan";
         String taxCity = "Jakarta Selatan";
@@ -118,17 +119,90 @@ public class editVendor extends BaseTest {
         String taxPostalCode = "65019";
         String copyOfNpwp = "";
         String skt = "";
-        String eFaktur = "";
-        String pkp = "";
+        String eFaktur = "Yes";
+        String pkp = "Yes";
         String sppkp = "";
         String sppkpNumber = "1203912039";
         String nonPkp = "";
-        String hasSkb = "";
+        String hasSkb = "No";
         String skb = "";
-        editVendorPage.updateTaxInformation();
+        String[] vat = { "" };
+        String[] wht = { "" };
+        editVendorPage.updateTaxInformation(npwp, npwpNumber, npwpName, taxAddress, taxCity, taxCountry, taxPostalCode,
+                copyOfNpwp, skt, eFaktur, pkp, sppkp, sppkpNumber, nonPkp, hasSkb, skb, vat, wht);
         if (individualRun) {
             // Submit
             editVendorPage.submitUpdateVendor();
         }
+    }
+
+    @Test(priority = 4)
+    public void editVendorStage4() throws InterruptedException {
+        if (individualRun) {
+            // Login vm staff
+            login.loginVMS("fahmi.budiman", "123");
+            // Open vendor database page
+            vendorDatabasePage.openVendorDatabasePage();
+            // Search vendor
+            vendorDatabasePage.filterByVendorName(vendorName);
+            // Open vendor detail page
+            vendorDatabasePage.openVendorDetail(vendorName);
+            // Open edit vendor page
+            vendorDetailPage.openEditVendorPage();
+        }
+
+        // Edit vendor stage 4
+        String[][] bankAccounts = {
+                { "" },
+                { "" }
+        };
+        editVendorPage.updatePaymentInformation(bankAccounts);
+
+        if (individualRun) {
+            // Submit
+            editVendorPage.submitUpdateVendor();
+        }
+    }
+
+    @Test(priority = 5)
+    public void editVendorStage6() throws InterruptedException {
+        if (individualRun) {
+            // Login vm staff
+            login.loginVMS("fahmi.budiman", "123");
+            // Open vendor database page
+            vendorDatabasePage.openVendorDatabasePage();
+            // Search vendor
+            vendorDatabasePage.filterByVendorName(vendorName);
+            // Open vendor detail page
+            vendorDatabasePage.openVendorDetail(vendorName);
+            // Open edit vendor page
+            vendorDetailPage.openEditVendorPage();
+        }
+
+        // Edit vendor stage 6
+        String transactionValue = "500000000";
+        String[][] descAndRemarks = {
+                { "Company Website", "Dummy2" },
+                { "Penelusuran Perkara", "Dummy2" },
+                { "Latar Belakang / Pemegang Saham", "Dummy2" },
+                { "Informasi Umum (Sumber Google / situs web resmi pihak ketiga)",
+                        "Dummy2" },
+                { "Peta / Lokasi Situs (Google Maps)", "Dummy2" },
+                { "Informasi Perusahaan (Administrasi Hukum Umum / Bursa Efek Indonesia (Perusahaan Publik))",
+                        "Dummy2" },
+                { "Penelusuran informasi lainnya : Pers/Media", "Dummy2" },
+                { "Penelusuran informasi lainnya : Pengadilan Hukum", "Dummy2" },
+                { "Penelusuran informasi lainnya : News Center", "Dummy2" },
+                { "Penelusuran informasi lainnya : Berita IDX", "Dummy2" },
+        };
+        String dueDillNumber = "5810392";
+        String dueDillAttachment = "";
+        String mitigationPlan = "Dummy2";
+        String expiredDate = "2";
+        editVendorPage.updateComplianceEnhancement(transactionValue, descAndRemarks, dueDillNumber, dueDillAttachment,
+                mitigationPlan, expiredDate);
+
+        // Submit
+        editVendorPage.submitUpdateVendor();
     }
 }

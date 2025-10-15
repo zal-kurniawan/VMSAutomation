@@ -13,7 +13,7 @@ public class vendorRegistrationObject {
     }
 
     public WebElement buttonCreateVendor() {
-        return driver.findElement(By.xpath("//*//i[contains(@class, 'fa-plus')]/.."));
+        return driver.findElement(By.xpath("//button[normalize-space()='Create Vendor']"));
     }
 
     public WebElement buttonViewVendorDynamic(String text) {

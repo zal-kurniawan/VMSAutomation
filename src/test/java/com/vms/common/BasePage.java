@@ -1,13 +1,18 @@
 package com.vms.common;
 
+import java.time.Duration;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
     protected WebDriver driver;
+    protected WebDriverWait wait;
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
-
+        wait = new WebDriverWait(driver, Duration.ofMillis(40000));
     }
 
     // Method untuk menunggu selama beberapa milidetik
@@ -17,6 +22,10 @@ public class BasePage {
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
+    }
+
+    public void waitElement(WebElement element) {
+        wait.until(ExpectedConditions.visibilityOf(element));
     }
 
     // Scroll ke atas halaman
