@@ -1,9 +1,9 @@
 package com.vms.steps;
 
 import org.openqa.selenium.WebDriver;
-
-import com.vms.common.BasePage;
 import com.vms.objects.loginObject;
+import com.vms.utils.BasePage;
+import com.vms.utils.Helper;
 
 public class loginPage extends BasePage {
     private loginObject loginObject;
@@ -13,10 +13,10 @@ public class loginPage extends BasePage {
         this.loginObject = new loginObject(driver);
     }
 
-    public void loginVMS(String username, String password) throws InterruptedException {
+    public void loginVMS() throws InterruptedException {
         waitElement(loginObject.inputUsername());
-        loginObject.inputUsername().sendKeys(username);
-        loginObject.inputPassword().sendKeys(password);
+        loginObject.inputUsername().sendKeys(Helper.getKey("username"));
+        loginObject.inputPassword().sendKeys(Helper.getKey("password"));
         loginObject.buttonLogin().click();
     }
 }

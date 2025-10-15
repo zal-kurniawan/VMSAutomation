@@ -1,4 +1,4 @@
-package com.vms.common;
+package com.vms.utils;
 
 import java.time.Duration;
 import org.openqa.selenium.WebDriver;

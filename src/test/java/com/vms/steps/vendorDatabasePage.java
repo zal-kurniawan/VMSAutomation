@@ -4,9 +4,9 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import com.vms.common.BasePage;
 import com.vms.objects.navigationObject;
 import com.vms.objects.vendorDatabaseObject;
+import com.vms.utils.BasePage;
 
 public class vendorDatabasePage extends BasePage {
     private vendorDatabaseObject vendorDatabaseObject;

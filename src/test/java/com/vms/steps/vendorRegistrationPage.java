@@ -2,9 +2,10 @@ package com.vms.steps;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import com.vms.common.BasePage;
+
 import com.vms.objects.navigationObject;
 import com.vms.objects.vendorRegistrationObject;
+import com.vms.utils.BasePage;
 
 public class vendorRegistrationPage extends BasePage {
     private vendorRegistrationObject vendorRegistrationObject;

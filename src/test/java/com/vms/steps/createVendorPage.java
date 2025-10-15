@@ -3,8 +3,8 @@ package com.vms.steps;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import com.vms.common.BasePage;
 import com.vms.objects.createVendorObject;
+import com.vms.utils.BasePage;
 
 public class createVendorPage extends BasePage {
     private createVendorObject createVendorObject;

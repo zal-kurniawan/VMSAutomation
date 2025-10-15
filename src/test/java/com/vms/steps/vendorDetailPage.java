@@ -1,8 +1,9 @@
 package com.vms.steps;
 
 import org.openqa.selenium.WebDriver;
-import com.vms.common.BasePage;
+
 import com.vms.objects.vendorDetailObject;
+import com.vms.utils.BasePage;
 
 public class vendorDetailPage extends BasePage {
     private vendorDetailObject vendorDetailObject;

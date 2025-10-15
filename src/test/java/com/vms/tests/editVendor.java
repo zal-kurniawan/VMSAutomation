@@ -2,11 +2,12 @@ package com.vms.tests;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import com.vms.common.BaseTest;
+
 import com.vms.steps.editVendorPage;
 import com.vms.steps.loginPage;
 import com.vms.steps.vendorDatabasePage;
 import com.vms.steps.vendorDetailPage;
+import com.vms.utils.BaseTest;
 
 public class editVendor extends BaseTest {
 
@@ -28,7 +29,7 @@ public class editVendor extends BaseTest {
     @Test(priority = 1)
     public void editVendorStage1() throws InterruptedException {
         // Login vm staff
-        login.loginVMS("fahmi.budiman", "123");
+        login.loginVMS();
         // Open vendor database page
         vendorDatabasePage.openVendorDatabasePage();
         // Search vendor
@@ -64,7 +65,7 @@ public class editVendor extends BaseTest {
     public void editVendorStage2() throws InterruptedException {
         if (individualRun) {
             // Login vm staff
-            login.loginVMS("fahmi.budiman", "123");
+            login.loginVMS();
             // Open vendor database page
             vendorDatabasePage.openVendorDatabasePage();
             // Search vendor
@@ -99,7 +100,7 @@ public class editVendor extends BaseTest {
     public void editVendorStage3() throws InterruptedException {
         if (individualRun) {
             // Login vm staff
-            login.loginVMS("fahmi.budiman", "123");
+            login.loginVMS();
             // Open vendor database page
             vendorDatabasePage.openVendorDatabasePage();
             // Search vendor
@@ -140,7 +141,7 @@ public class editVendor extends BaseTest {
     public void editVendorStage4() throws InterruptedException {
         if (individualRun) {
             // Login vm staff
-            login.loginVMS("fahmi.budiman", "123");
+            login.loginVMS();
             // Open vendor database page
             vendorDatabasePage.openVendorDatabasePage();
             // Search vendor
@@ -174,7 +175,7 @@ public class editVendor extends BaseTest {
     public void editVendorStage6() throws InterruptedException {
         if (individualRun) {
             // Login vm staff
-            login.loginVMS("fahmi.budiman", "123");
+            login.loginVMS();
             // Open vendor database page
             vendorDatabasePage.openVendorDatabasePage();
             // Search vendor

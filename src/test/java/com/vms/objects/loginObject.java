@@ -14,11 +14,12 @@ public class loginObject {
     public WebElement inputUsername() {
         return driver.findElement(By.xpath("//*//input[@id='username']"));
     }
+
     public WebElement inputPassword() {
         return driver.findElement(By.xpath("//*//input[@id='password']"));
     }
-    
-    public WebElement buttonLogin(){
+
+    public WebElement buttonLogin() {
         return driver.findElement(By.xpath("//*//button[text() = 'LOGIN']"));
     }
 }

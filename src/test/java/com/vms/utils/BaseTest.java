@@ -1,4 +1,4 @@
-package com.vms.common;
+package com.vms.utils;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -25,7 +25,7 @@ public class BaseTest {
         options.addArguments("--disable-popup-blocking");
         // options.addArguments("--headless=new");
         driver = new ChromeDriver(options);
-        driver.get("https://tam-vms.southeastasia.cloudapp.azure.com/vms/");
+        driver.get(Helper.getKey("url"));
 
         // Cek apakah test dijalankan secara individual
         String testFilter = System.getProperty("test");

@@ -2,10 +2,11 @@ package com.vms.tests;
 
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
-import com.vms.common.BaseTest;
+
 import com.vms.steps.createVendorPage;
 import com.vms.steps.loginPage;
 import com.vms.steps.vendorRegistrationPage;
+import com.vms.utils.BaseTest;
 
 public class registrationVendor extends BaseTest {
 
@@ -23,7 +24,7 @@ public class registrationVendor extends BaseTest {
         @Test(priority = 1)
         public void vendorRegistrationByVMStaff() throws InterruptedException {
                 // Login vm staff
-                login.loginVMS("fahmi.budiman", "123");
+                login.loginVMS();
                 // Open vendor registration page
                 vendorRegistrationPage.openVendorRegistrationPage();
                 // Open create vendor page
